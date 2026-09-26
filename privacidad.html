@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Menú Trinidad Parrilla</title>
+<title>Aviso de privacidad · Trinidad Parrilla</title>
 <style>
   :root{
     --cream:#faf3e6;
     --cream-2:#f0e4cd;
     --paper:#fffdf9;
+    --maroon:#7a2026;
     --maroon-deep:#5c161b;
     --maroon-darker:#3a1013;
     --gold:#b9862f;
@@ -62,39 +63,29 @@
   }
 
   main{padding-block:20px 10px}
-  .section-head{margin-bottom:16px;text-align:center}
+  .section-head{margin-bottom:18px;text-align:center}
   .eyebrow{
     font-size:.72rem;letter-spacing:1.8px;text-transform:uppercase;
     color:var(--gold);font-weight:700;
   }
-  h1{font-family:'Bitter',Georgia,serif;font-size:1.35rem;color:var(--maroon-deep);margin:6px 0 0;text-wrap:balance}
-  .section-head p{margin:8px auto 0;color:var(--muted);font-size:.88rem;line-height:1.55;max-width:36ch}
+  h1{font-family:'Bitter',Georgia,serif;font-size:1.3rem;color:var(--maroon-deep);margin:6px 0 0;text-wrap:balance}
+  .section-head p{margin:8px auto 0;color:var(--muted);font-size:.88rem;line-height:1.55;max-width:38ch}
 
-  .menu-shots{display:flex;flex-direction:column;gap:14px}
-  .menu-shots figure{margin:0;position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;box-shadow:0 14px 30px -22px rgba(58,16,19,0.4)}
-  .menu-shots img{width:100%}
-  .zoom-hint{
-    position:absolute;bottom:10px;right:10px;
-    background:rgba(58,16,19,0.75);
-    color:var(--cream);font-size:.72rem;
-    padding:5px 10px;border-radius:999px;
-    display:flex;align-items:center;gap:5px;
-    backdrop-filter:blur(2px);
+  .items{display:flex;flex-direction:column;gap:12px}
+  .item{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px 18px;
+    box-shadow:0 14px 30px -24px rgba(58,16,19,0.35);
   }
-  .zoom-hint svg{width:12px;height:12px}
-
-  #lightbox{
-    position:fixed;inset:0;background:rgba(20,7,8,0.92);
-    display:flex;align-items:center;justify-content:center;
-    padding:20px;z-index:50;
+  .item h2{
+    font-family:'Bitter',Georgia,serif;
+    font-size:.95rem;
+    color:var(--maroon-deep);
+    margin:0 0 6px;
   }
-  #lightbox img{max-height:92vh;border-radius:10px}
-  #lightbox button{
-    position:absolute;top:max(16px, env(safe-area-inset-top, 0px));right:16px;
-    width:38px;height:38px;border-radius:999px;border:none;
-    background:var(--paper);color:var(--maroon-deep);
-    font-size:1.1rem;display:flex;align-items:center;justify-content:center;
-  }
+  .item p{margin:0;color:var(--muted);font-size:.84rem;line-height:1.6}
 
   footer{padding-block:26px 40px;text-align:center;background:var(--maroon-darker);color:var(--cream);margin-top:24px}
   footer p{margin:0;color:rgba(250,243,230,0.7);font-size:.8rem}
@@ -116,20 +107,29 @@
 <main>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Menú</div>
-      <h1>Lo que sale del fogón</h1>
+      <div class="eyebrow">Aviso legal</div>
+      <h1>Tratamiento de datos personales</h1>
       <div class="divider"><span></span><i></i><span></span></div>
-      <p>Sopas, carnes a la llanera, picadas para compartir, porciones, bebidas y postres. Toca una foto para ampliarla.</p>
+      <p>Este aviso explica qué pasa con tu información cuando usas el formulario de quejas, dudas y reclamos de Trinidad Parrilla.</p>
     </div>
-    <div class="menu-shots">
-      <figure onclick="openLightbox('images/menu-1.jpg')">
-        <img src="images/menu-1.jpg" alt="Menú Trinidad Parrilla: sopas, carnes, picadas y porciones">
-        <span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Ampliar</span>
-      </figure>
-      <figure onclick="openLightbox('images/menu-2.jpg')">
-        <img src="images/menu-2.jpg" alt="Menú Trinidad Parrilla: bebidas y postres">
-        <span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Ampliar</span>
-      </figure>
+
+    <div class="items">
+      <div class="item">
+        <h2>Qué datos pedimos</h2>
+        <p>Tu nombre, de forma opcional, y el mensaje que escribas contándonos tu queja, duda, reclamo o sugerencia.</p>
+      </div>
+      <div class="item">
+        <h2>Para qué los usamos</h2>
+        <p>Únicamente para atender tu solicitud y mejorar el servicio de Trinidad Parrilla. No los usamos para publicidad ni los compartimos con terceros.</p>
+      </div>
+      <div class="item">
+        <h2>Dónde quedan guardados</h2>
+        <p>Al enviar el formulario se abre WhatsApp con tu mensaje ya escrito; tú lo envías desde tu propio WhatsApp y queda almacenado en el WhatsApp de Trinidad Parrilla, no en una base de datos externa.</p>
+      </div>
+      <div class="item">
+        <h2>Tus derechos</h2>
+        <p>De acuerdo con la Ley 1581 de 2012 (Habeas Data), puedes conocer, actualizar, rectificar o solicitar la eliminación de tus datos personales en cualquier momento, escribiéndonos por el mismo WhatsApp o por Instagram.</p>
+      </div>
     </div>
   </div>
 </main>
@@ -140,22 +140,5 @@
   </div>
 </footer>
 
-<div id="lightbox" hidden>
-  <button onclick="closeLightbox()" aria-label="Cerrar">✕</button>
-  <img id="lightbox-img" src="" alt="Menú ampliado">
-</div>
-
-<script>
-  function openLightbox(src){
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').hidden = false;
-  }
-  function closeLightbox(){
-    document.getElementById('lightbox').hidden = true;
-  }
-  document.getElementById('lightbox').addEventListener('click', function(e){
-    if(e.target.id === 'lightbox') closeLightbox();
-  });
-</script>
 </body>
 </html>
