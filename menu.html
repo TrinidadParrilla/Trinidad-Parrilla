@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menú Trinidad Parrilla</title>
+<link rel="icon" href="images/logo.png">
+<style>
+  :root{
+    --bg:#351314;
+    --surface-2:#521d20;
+    --cream:#f6efe2;
+    --cream-dim:#e8dcc6;
+    --gold:#b9862f;
+    --text-cream:#3f1417;
+    --line: rgba(246,239,226,0.16);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html,body{margin:0}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Work Sans','Segoe UI',sans-serif;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:480px;margin:0 auto;padding-inline:20px}
+
+  header{
+    background:radial-gradient(120% 80% at 50% 0%, var(--surface-2) 0%, var(--bg) 70%);
+    padding-block:22px 20px;
+    border-bottom:1px solid var(--line);
+    text-align:center;
+  }
+  header .wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .logo{width:min(150px,45vw);border-radius:0 0 999px 999px;background:var(--bg)}
+  .back{
+    align-self:flex-start;
+    font-size:.85rem;
+    color:var(--cream-dim);
+    display:flex;align-items:center;gap:6px;
+  }
+  .back svg{width:14px;height:14px}
+
+  main{padding-block:26px 10px}
+  .section-head{margin-bottom:16px}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+  }
+  h1{font-family:'Bitter',Georgia,serif;font-size:1.4rem;color:var(--cream);margin:4px 0 0;text-wrap:balance}
+  .section-head p{margin:6px 0 0;color:var(--cream-dim);font-size:.88rem;line-height:1.5}
+
+  .menu-shots{display:flex;flex-direction:column;gap:14px}
+  .menu-shots figure{margin:0;position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in}
+  .menu-shots img{width:100%}
+  .zoom-hint{
+    position:absolute;bottom:10px;right:10px;
+    background:rgba(53,19,20,0.75);
+    color:var(--cream);font-size:.72rem;
+    padding:5px 10px;border-radius:999px;
+    display:flex;align-items:center;gap:5px;
+    backdrop-filter:blur(2px);
+  }
+  .zoom-hint svg{width:12px;height:12px}
+
+  #lightbox{
+    position:fixed;inset:0;background:rgba(20,7,8,0.92);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;z-index:50;
+  }
+  #lightbox img{max-height:92vh;border-radius:10px}
+  #lightbox button{
+    position:absolute;top:max(16px, env(safe-area-inset-top, 0px));right:16px;
+    width:38px;height:38px;border-radius:999px;border:none;
+    background:var(--cream);color:var(--text-cream);
+    font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+  }
+
+  footer{padding-block:24px 40px;text-align:center;border-top:1px solid var(--line);margin-top:20px}
+  footer p{margin:0;color:var(--cream-dim);font-size:.8rem}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Work+Sans:wght@400;500;600;700&display=swap">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      Volver a Trinidad Parrilla
+    </a>
+    <img class="logo" src="images/logo.png" alt="Trinidad Parrilla">
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Menú</div>
+      <h1>Lo que sale del fogón</h1>
+      <p>Sopas, carnes a la llanera, picadas para compartir, porciones, bebidas y postres. Toca una foto para ampliarla.</p>
+    </div>
+    <div class="menu-shots">
+      <figure onclick="openLightbox('images/menu-1.jpg')">
+        <img src="images/menu-1.jpg" alt="Menú Trinidad Parrilla: sopas, carnes, picadas y porciones">
+        <span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Ampliar</span>
+      </figure>
+      <figure onclick="openLightbox('images/menu-2.jpg')">
+        <img src="images/menu-2.jpg" alt="Menú Trinidad Parrilla: bebidas y postres">
+        <span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Ampliar</span>
+      </figure>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Trinidad Parrilla · Vereda Tablanca, Piedecuesta (Santander)</p>
+  </div>
+</footer>
+
+<div id="lightbox" hidden>
+  <button onclick="closeLightbox()" aria-label="Cerrar">✕</button>
+  <img id="lightbox-img" src="" alt="Menú ampliado">
+</div>
+
+<script>
+  function openLightbox(src){
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').hidden = false;
+  }
+  function closeLightbox(){
+    document.getElementById('lightbox').hidden = true;
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e){
+    if(e.target.id === 'lightbox') closeLightbox();
+  });
+</script>
+</body>
+</html>
